@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link"
 
 const Homepage = () => {
   return <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{duration: 1}}>
@@ -13,18 +14,17 @@ const Homepage = () => {
     {/* TEXT CONTAINER */}
     <div className='h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center'>
       {/* TITLE */}
-      <h1 className='text-4xl md:text-6xl font-bold text-white'>Aplikacje mobilne i strony internetowe dla parafii</h1>
+      <h1 className='text-4xl md:text-6xl font-bold text-white'>Aplikacje mobilne oraz strony internetowe dla parafii</h1>
 
       {/* DESC */}
-      <p className='text-white md:text-xl'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      <p className='text-white md:text-xl'>Nowoczesne narzędzia dostosowane do potrzeb duszpasterstwa, 
+      umożliwiające łatwe zarządzanie wydarzeniami, komunikację z wiernymi czy też udostępnianie duchowych treści.
         </p>
 
         {/* BUTTONS */}
         <div className='w-full flex gap-4'>
-          <button className="p-4 rounded-lg ring-1 ring-gray-600 text-white bg-gray-600">Zobacz więcej</button>
-          <button className="p-4 rounded-lg ring-1 ring-white text-white">Napisz do mnie</button>
+          <Link href="/portfolio"><button className="p-4 rounded-lg ring-1 ring-gray-600 text-white bg-gray-600">Zobacz moje prace</button></Link>
+          <Link href="/contact"><button className="p-4 rounded-lg ring-1 ring-white text-white">Napisz do mnie</button></Link>
         </div>
     </div>
   </div>

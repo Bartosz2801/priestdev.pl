@@ -1,19 +1,32 @@
 "use client";
-import { motion } from "framer-motion";
+import AppDev from "@/components/appdev";
+import { motion, useScroll, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const AboutPage = () => {
+
+    const containerRef = useRef()
+
+    const {scrollYProgress} = useScroll({container:containerRef})
+    
+    const techRef = useRef()
+    const techInView = useInView(techRef, {once: true, margin:"-100px"})
+
+    const aboutRef = useRef()
+    const aboutInView = useInView(aboutRef, {once: true, margin:"-100px"})
+
     return (
         <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{duration: 1}}>
 
         {/* CONTAINER */}    
-        <div className='h-full overflow-scroll lg:flex'>
+        <div className='h-full overflow-auto lg:flex' ref={containerRef}>
             {/* TEXT CONTAINER */}
             <div className='p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3  lg:pr-0 xl:1/2 text-white'>
                 {/* BIOGRAPCHY CONTAINER */}
                 <div className='flex flex-col gap-10 justify-center'>
                     {/* BIOGRAPCHY TEXT */}
                     <h1 className="font-bold text-2xl">KS. BARTOSZ DULĘBA</h1>
-                    <p className="text-lg">Kapłan Archidiecezji Wrocławskiej, duszpasterz, ale też pasjonat programowania.</p>
+                    <p className="text-lg">Kapłan Archidiecezji Wrocławskiej. Duszpasterz, ale też pasjonat programowania.</p>
                     <p className="text-lg italic">Jestem przekonany, iż nie mozna ignorować faktu, że w dzisiejszym świecie technologia odgrywa ogromną rolę, 
                         dlatego proponuję stworzenie zarówno strony internetowej, promującej wydarzenia parafialne, jak również aplikacji mobilnej, która umożliwia utrzymywanie łączności z parafią przy pomocy smartfona, zarówno z systemem Android, jak i iOS.</p>
                         {/* BIOGRAPCHY SCROLL SVG */}
@@ -44,11 +57,11 @@ const AboutPage = () => {
                     
 
                 {/* TECHNOLOGIES CONTAINER */}
-                <div className='flex flex-col gap-12 justify-center'>
+                <div className='flex flex-col gap-12 justify-center' ref={techRef}>
                     {/* TECHNOLOGIES TEXT */}
-                    <h1 className="font-bold text-2xl">TECHNOLOGIE</h1>
+                    <motion.h1 initial={{x:'-100vh'}} animate={techInView ? {x:0} : {}} transition={{delay:0.2}} className="font-bold text-2xl">NARZĘDZIA</motion.h1>
                     {/* TECHNOLOGIES LIST */}
-                    <div className='flex gap-4 flex-wrap'>
+                    <motion.div initial={{x:'-100vh'}} animate={techInView ? {x:0} : {}} className='flex gap-4 flex-wrap'>
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>Flutter</div>
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>HTML</div>
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>CSS</div>
@@ -59,7 +72,7 @@ const AboutPage = () => {
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>JavaScript</div>
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>Bootstrap CSS</div>
                         <div className='rounded p-2 text-sm cursor-pointer bg-gray-600 hover:bg-white hover:text-black'>Tailwind CSS</div>
-                    </div>
+                    </motion.div>
                     {/* TECHNOLOGIES SCROLL SVG */}
                     <motion.svg
                             initial={{ opacity: 0.2, y: 0 }}
@@ -82,16 +95,15 @@ const AboutPage = () => {
                                 stroke="#FFFFFF"
                                 strokeWidth="1"
                             ></path>
-                            </motion.svg>
+                            </motion.svg> 
                 </div>
 
                 {/* ABOUT ME CONTAINER */}
-                <div className='flex flex-col gap-12 justify-center pb-48'>
+                <div className='flex flex-col gap-12 justify-center pb-48' ref={aboutRef}>
                     {/* ABOUT ME TEXT */}
-                    <h1 className="font-bold text-2xl">O MNIE</h1>
+                    <motion.h1 initial={{x:'-100vh'}} animate={aboutInView ? {x:0} : {}} transition={{delay:0.2}} className="font-bold text-2xl">MIEJSCA POSŁUGI</motion.h1>
                     {/* ABOUT ME TIMELINE */}
-                    <div className=''>
-
+                    <motion.div initial={{x:'-100vh'}} animate={aboutInView ? {x:0} : {}} className=''>
                        {/* TIMELINE ITEM */}
                        <div className='flex justify-between h-48'>
                         {/* LEFT */}
@@ -108,7 +120,7 @@ const AboutPage = () => {
                             {/* LINE */}
                             <div className='w-1 h-full bg-gray-400 relative'>
                                 {/* CIRCLE */}
-                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-gray-400 bg-white -left-2'></div>
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-blue-300 bg-white -left-2'></div>
                             </div>
                         </div>
                         {/* RIGHT */}
@@ -126,7 +138,7 @@ const AboutPage = () => {
                             {/* LINE */}
                             <div className='w-1 h-full bg-gray-400 relative'>
                                 {/* CIRCLE */}
-                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-gray-400 bg-white -left-2'></div>
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-blue-300 bg-white -left-2'></div>
                             </div>
                         </div>
                         {/* RIGHT */}
@@ -156,7 +168,7 @@ const AboutPage = () => {
                             {/* LINE */}
                             <div className='w-1 h-full bg-gray-400 relative'>
                                 {/* CIRCLE */}
-                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-gray-400 bg-white -left-2'></div>
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-blue-300 bg-white -left-2'></div>
                             </div>
                         </div>
                         {/* RIGHT */}
@@ -174,7 +186,7 @@ const AboutPage = () => {
                             {/* LINE */}
                             <div className='w-1 h-full bg-gray-400 relative'>
                                 {/* CIRCLE */}
-                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-gray-400 bg-white -left-2'></div>
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-blue-300 bg-white -left-2'></div>
                             </div>
                         </div>
                         {/* RIGHT */}
@@ -204,19 +216,21 @@ const AboutPage = () => {
                             {/* LINE */}
                             <div className='w-1 h-full bg-gray-400 relative'>
                                 {/* CIRCLE */}
-                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-gray-400 bg-white -left-2'></div>
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-blue-300 bg-white -left-2'></div>
                             </div>
                         </div>
                         {/* RIGHT */}
                         <div className='w-1/3'></div>
                         </div>  
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             {/* SVG CONTAINER */}
-            <div className='hidden lg:block w-1/3 xl:1/2'></div>
-            
-        </div>
+            <div className='hidden lg:block w-1/3 xl:1/2 z-30 sticky top-20'>
+            <AppDev scrollYProgress={scrollYProgress}/>
+            </div>       
+        </div>   
+             
         </motion.div>
     )
 }
