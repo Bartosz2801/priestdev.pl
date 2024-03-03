@@ -94,7 +94,8 @@ const PortfolioPage = () => {
                         <motion.div layout className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                         {filteredData?.map((item) => (
                         <AnimatePresence>   
-                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{type: "easeInOut", duration:0.5}} key={item.id} className="bg-gray-600/20 hover:bg-gray-600/30 rounded-xl flex flex-col items-start justify-start text-start">
+                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{type: "easeInOut", duration:0.5}} key={item.id} 
+                        className="bg-gray-600/20 hover:bg-gray-600/30 rounded-xl flex flex-col items-start justify-start text-start">
                             <div className="w-full h-full relative rounded-t-xl">
                             <img src={item.image} alt={item.title} className="rounded-t-xl object-cover"/>
                             </div>
@@ -104,7 +105,7 @@ const PortfolioPage = () => {
                             </div>
                             <div className="flex justify-between items-center w-full"><p className="text-white text-sm py-3 px-3">{item.category}</p>
                             <Link href={item.link} target="new" className="text-blue-500 text-sm px-3 py-2 items-end">
-                                <button className="text-white rounded-md bg-blue-400/30 text-md py-1 px-3">Zobacz</button>
+                                <button className="text-white rounded-lg bg-blue-400/30 text-md py-1 px-3">Zobacz</button>
                             </Link>
                             </div>
     
