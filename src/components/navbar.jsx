@@ -79,7 +79,7 @@ const Navbar = () => {
             </div>
 
             {/* MENU */}
-            <div className='hidden md:flex gap-4'>
+            <div className='hidden md:flex gap-8'>
             {links.map(link=>(
                    <NavLink link={link} key={link.title} />
                 ))}

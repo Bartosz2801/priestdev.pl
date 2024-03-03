@@ -10,7 +10,7 @@ const pathName = usePathname();
 console.log(pathName);
 
     return (
-        <Link href={link.url} className={`hover:underline underline-offset-4 ${pathName === link.url && 'underline underline-offset-4'}`}>{link.title}</Link>
+        <Link href={link.url} className={'hover:underline underline-offset-4'}>{link.title}</Link>
     )
 }
 

@@ -57,7 +57,7 @@ const AboutPage = () => {
                     
 
                 {/* TECHNOLOGIES CONTAINER */}
-                <div className='flex flex-col gap-12 justify-center' ref={techRef}>
+                <div id="tech" className='flex flex-col gap-12 justify-center' ref={techRef}>
                     {/* TECHNOLOGIES TEXT */}
                     <motion.h1 initial={{x:'-100vh'}} animate={techInView ? {x:0} : {}} transition={{delay:0.2}} className="font-bold text-2xl">NARZĘDZIA</motion.h1>
                     {/* TECHNOLOGIES LIST */}
@@ -99,7 +99,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* ABOUT ME CONTAINER */}
-                <div className='flex flex-col gap-12 justify-center pb-48' ref={aboutRef}>
+                <div id="times" className='flex flex-col gap-12 justify-center pb-48' ref={aboutRef}>
                     {/* ABOUT ME TEXT */}
                     <motion.h1 initial={{x:'-100vh'}} animate={aboutInView ? {x:0} : {}} transition={{delay:0.2}} className="font-bold text-2xl">MIEJSCA POSŁUGI</motion.h1>
                     {/* ABOUT ME TIMELINE */}

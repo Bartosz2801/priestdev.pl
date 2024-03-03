@@ -23,7 +23,7 @@ const Homepage = () => {
 
         {/* BUTTONS */}
         <div className='w-full flex gap-4'>
-          <Link href="/portfolio"><button className="p-4 rounded-lg ring-1 ring-gray-600 text-white bg-gray-600">Zobacz moje prace</button></Link>
+          <Link href="/portfolio"><button className="p-4 rounded-lg ring-1 ring-gray-600 text-white bg-gray-600">Zobacz więcej</button></Link>
           <Link href="/contact"><button className="p-4 rounded-lg ring-1 ring-white text-white">Napisz do mnie</button></Link>
         </div>
     </div>
