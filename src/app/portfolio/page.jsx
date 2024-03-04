@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import useSWR from "swr";
+import { MdFilterListOff } from "react-icons/md";
+import { TbWorldWww } from "react-icons/tb";
+import { FaMobileAlt } from "react-icons/fa";
 
 const getData = async (url) => {
         const res = await fetch(url);
@@ -73,28 +76,31 @@ const PortfolioPage = () => {
                 <motion.div initial={{x:'-200vh'}} animate={{x:0}} layout transition={{delay:1}} className="flex justify-center w-1/3 mx-auto rounded-xl items-center text-center bg-gray-600/20 gap-4 mb-8">
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("All")}
-                        className={`filter-btn ${activeFilter === "All" && "active bg-white text-blue-950 "} text-white w-full rounded-xl text-sm font-medium py-3 px-4 `}
+                        className={`filter-btn ${activeFilter === "All" && "active bg-white text-gray-950 "} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4 `}
                     >
-                        Wszystko
+                        <span className="hidden lg:block">Wszystko</span>
+                        <MdFilterListOff className="lg:hidden"/>
                     </button></div>
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("Strona WWW")}
-                        className={`filter-btn ${activeFilter === "Strona WWW" && "active bg-white text-blue-950"} text-white w-full rounded-xl text-sm font-medium py-3 px-4`}
+                        className={`filter-btn ${activeFilter === "Strona WWW" && "active bg-white text-gray-950"} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
                     >
-                        WWW
+                        <span className="hidden lg:block">WWW</span>
+                        <TbWorldWww className="lg:hidden"/>
                     </button></div>
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("Aplikacja mobilna")}
-                        className={`filter-btn ${activeFilter === "Aplikacja mobilna" && "active bg-white text-blue-950"} text-white w-full rounded-xl text-sm font-medium py-3 px-4`}
+                        className={`filter-btn ${activeFilter === "Aplikacja mobilna" && "active bg-white text-gray-950"} text-white w-full  flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
                     >
-                        Aplikacje
+                       <span className="hidden lg:block">Aplikacje</span>
+                        <FaMobileAlt className="lg:hidden"/>
                     </button></div>
                 </motion.div>
                     <motion.div initial={{x:'-200vh'}} animate={{x:0}} transition={{delay:1}} className="w-full h-full">
                         <motion.div layout className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredData?.map((item) => (
-                        <AnimatePresence>   
-                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration:0.5}} key={item.id} 
+                        {filteredData?.map((item, index) => (
+                        <AnimatePresence key={index}>   
+                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration:0.5}} key={item.id}
                         className="bg-gray-600/20 hover:bg-gray-600/30 rounded-xl flex flex-col items-start justify-start text-start">
                             <div className="w-full h-full relative rounded-t-xl">
                             <img src={item.image} alt={item.title} className="rounded-t-xl object-cover"/>
