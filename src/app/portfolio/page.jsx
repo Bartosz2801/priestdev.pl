@@ -17,7 +17,7 @@ const getData = async (url) => {
             throw error;
         }
 
-        return data;
+        return data.reverse();
   };
 
 const PortfolioPage = () => {
@@ -76,21 +76,21 @@ const PortfolioPage = () => {
                 <motion.div initial={{x:'-200vh'}} animate={{x:0}} layout transition={{delay:1}} className="flex justify-center w-1/3 mx-auto rounded-xl items-center text-center bg-gray-600/20 gap-4 mb-8">
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("All")}
-                        className={`filter-btn ${activeFilter === "All" && "active bg-white text-gray-950 "} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4 `}
+                        className={`filter-btn ${activeFilter === "All" && "active bg-white text-gray-900 "} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4 `}
                     >
                         <span className="hidden lg:block">Wszystko</span>
                         <MdFilterListOff className="lg:hidden"/>
                     </button></div>
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("Strona WWW")}
-                        className={`filter-btn ${activeFilter === "Strona WWW" && "active bg-white text-gray-950"} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
+                        className={`filter-btn ${activeFilter === "Strona WWW" && "active bg-white text-gray-900"} text-white w-full flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
                     >
                         <span className="hidden lg:block">WWW</span>
                         <TbWorldWww className="lg:hidden"/>
                     </button></div>
                     <div className="w-1/3"><button
                         onClick={() => handleFilterClick("Aplikacja mobilna")}
-                        className={`filter-btn ${activeFilter === "Aplikacja mobilna" && "active bg-white text-gray-950"} text-white w-full  flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
+                        className={`filter-btn ${activeFilter === "Aplikacja mobilna" && "active bg-white text-gray-900"} text-white w-full  flex items-center justify-center rounded-xl text-sm font-medium py-3 px-4`}
                     >
                        <span className="hidden lg:block">Aplikacje</span>
                         <FaMobileAlt className="lg:hidden"/>

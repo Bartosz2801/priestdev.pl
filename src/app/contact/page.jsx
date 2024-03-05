@@ -54,7 +54,7 @@ const ContactPage = () => {
             <textarea name="user_message" rows={6} className="bg-transparent border-b-2 border-b-gray-300 outline-none resize-none"/>
             <span>Adres email:</span>
             <input name="user_email" type="text" className="bg-transparent border-b-2 border-b-gray-300 outline-none"/>
-            <button className="bg-white p-3 rounded font-semibold text-gray-700">Wyślij</button>
+            <button className="bg-gray-600 p-3 rounded-xl font-medium text-white">Wyślij</button>
             {success && <span className="bg-green-900 p-1 text-white text-sm text-center">Wiadomość została wysłana!</span>}
             {error && <span className="bg-red-900 p-1 text-white text-sm text-center">Błąd wysyłania wiadomości</span>}
            </form>

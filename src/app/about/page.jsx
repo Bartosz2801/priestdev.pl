@@ -109,11 +109,11 @@ const AboutPage = () => {
                         {/* LEFT */}
                         <div className='w-1/3'>
                             {/* TITLE */}
-                            <div className='bg-gray-600 p-3 font-semibold rounded-b-lg rounded-s-lg'>Parafia św. Andrzeja Boboli we&nbsp;Wrocławiu</div>
+                            <div className='bg-gray-600 p-3 font-medium rounded-b-lg rounded-s-lg'>Parafia św. Andrzeja Boboli we&nbsp;Wrocławiu</div>
                             {/* SUBTITLE */}
                             <div className='p-3 text-sm italic'>Wikariusz</div>
                             {/* DATE */}
-                            <div className='p-3 text-sm font-semibold'>2021 - obecnie</div>
+                            <div className='p-3 text-sm font-medium'>2021 - obecnie</div>
                         </div>
                         {/* CENTER */}
                         <div className='w-1/6 flex justify-center'>
@@ -144,11 +144,11 @@ const AboutPage = () => {
                         {/* RIGHT */}
                         <div className='w-1/3'>
                             {/* TITLE */}
-                            <div className='bg-gray-600 p-3 font-semibold rounded-b-lg rounded-e-lg'>Parafia św. Józefa Oblubieńca NMP w&nbsp;Lutyni</div>
+                            <div className='bg-gray-600 p-3 font-medium rounded-b-lg rounded-e-lg'>Parafia św. Józefa Oblubieńca NMP w&nbsp;Lutyni</div>
                             {/* SUBTITLE */}
                             <div className='p-3 text-sm italic'>Wikariusz</div>
                             {/* DATE */}
-                            <div className='p-3 text-sm font-semibold'>2020 - 2021</div>
+                            <div className='p-3 text-sm font-medium'>2020 - 2021</div>
                         </div>
                         </div>
 
@@ -157,11 +157,11 @@ const AboutPage = () => {
                         {/* LEFT */}
                         <div className='w-1/3'>
                             {/* TITLE */}
-                            <div className='bg-gray-600 p-3 font-semibold rounded-b-lg rounded-s-lg'>Parafia św. Franciszka z Asyżu we&nbsp;Wrocławiu</div>
+                            <div className='bg-gray-600 p-3 font-medium rounded-b-lg rounded-s-lg'>Parafia św. Franciszka z Asyżu we&nbsp;Wrocławiu</div>
                             {/* SUBTITLE */}
                             <div className='p-3 text-sm italic'>Wikariusz i kapelan USK</div>
                             {/* DATE */}
-                            <div className='p-3 text-sm font-semibold'>2016 - 2020</div>
+                            <div className='p-3 text-sm font-medium'>2016 - 2020</div>
                         </div>
                         {/* CENTER */}
                         <div className='w-1/6 flex justify-center'>
@@ -192,11 +192,11 @@ const AboutPage = () => {
                         {/* RIGHT */}
                         <div className='w-1/3'>
                             {/* TITLE */}
-                            <div className='bg-gray-600 p-3 font-semibold rounded-b-lg rounded-e-lg'>Parafia św. Wawrzyńca w&nbsp;Wołowie</div>
+                            <div className='bg-gray-600 p-3 font-medium rounded-b-lg rounded-e-lg'>Parafia św. Wawrzyńca w&nbsp;Wołowie</div>
                             {/* SUBTITLE */}
                             <div className='p-3 text-sm italic'>Wikariusz</div>
                             {/* DATE */}
-                            <div className='p-3 text-sm font-semibold'>2014 - 2016</div>
+                            <div className='p-3 text-sm font-medium'>2014 - 2016</div>
                         </div>
                         </div>
 
@@ -205,11 +205,11 @@ const AboutPage = () => {
                         {/* LEFT */}
                         <div className='w-1/3'>
                             {/* TITLE */}
-                            <div className='bg-gray-600 p-3 font-semibold rounded-b-lg rounded-s-lg'>Parafia Podwyższenia Krzyża Świętego w&nbsp;Strzelinie</div>
+                            <div className='bg-gray-600 p-3 font-medium rounded-b-lg rounded-s-lg'>Parafia Podwyższenia Krzyża Świętego w&nbsp;Strzelinie</div>
                             {/* SUBTITLE */}
                             <div className='p-3 text-sm italic'>Wikariusz</div>
                             {/* DATE */}
-                            <div className='p-3 text-sm font-semibold'>2013 - 2014</div>
+                            <div className='p-3 text-sm font-medium'>2013 - 2014</div>
                         </div>
                         {/* CENTER */}
                         <div className='w-1/6 flex justify-center'>
