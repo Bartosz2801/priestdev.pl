@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link"
 
 const Homepage = () => {
-  return <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{duration: 1}}>
+  return <motion.div className="h-full" initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.3, duration: 1}}>
     <div className='h-full flex flex-col gap-8 lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
     {/* IMAGE CONTAINER */}
     <div className='h-1/2 lg:h-full lg:w-1/2 relative'>
@@ -15,11 +15,6 @@ const Homepage = () => {
     <div className='h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center'>
       {/* TITLE */}
       <h1 className='text-4xl md:text-6xl font-bold text-white'>Aplikacje mobilne oraz strony internetowe dla parafii</h1>
-
-      {/* DESC */}
-      <p className='text-white md:text-xl'>Nowoczesne narzędzia dostosowane do potrzeb duszpasterstwa, 
-      umożliwiające łatwe zarządzanie wydarzeniami, komunikację z wiernymi czy też udostępnianie duchowych treści.
-        </p>
 
         {/* BUTTONS */}
         <div className='w-full flex gap-4'>

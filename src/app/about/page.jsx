@@ -16,7 +16,7 @@ const AboutPage = () => {
     const aboutInView = useInView(aboutRef, {once: true, margin:"-100px"})
 
     return (
-        <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{duration: 1}}>
+        <motion.div className="h-full" initial={{x:"200vw"}} animate={{x:"0%"}} transition={{duration: 1}}>
 
         {/* CONTAINER */}    
         <div className='h-full overflow-auto lg:flex' ref={containerRef}>
