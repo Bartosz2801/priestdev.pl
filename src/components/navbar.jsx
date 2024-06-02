@@ -8,9 +8,8 @@ import { motion } from "framer-motion";
 
 const links = [
     {url:'/', title:'Start'},
-    {url:'/about', title:'O mnie'},
-    {url:'/portfolio', title:'Portfolio'},
-    {url:'/contact', title:'Kontakt'},
+    {url:'#functions', title:'O aplikacji'},
+    {url:'#contact', title:'Kontakt'},
 ];
 
 const Navbar = () => {
@@ -69,12 +68,12 @@ const Navbar = () => {
     }
 
     return (
-        <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-white text-xl'>
+        <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-black text-xl'>
             
             {/* LOGO */}
             <div className='md:hidden lg:flex justify-center'>
                 <Link href='/'>
-                    <Image src='/logo.svg' alt='' width={280} height={106}/>
+                    <Image src='/logo.png' alt='' width={320} height={113}/>
                 </Link>
             </div>
 
@@ -89,16 +88,28 @@ const Navbar = () => {
             <div className='md:hidden'>
             {/* MENU BUTTON */}
             <button className="w-10 h-8 flex flex-col justify-between z-50 relative" onClick={(()=>setOpen(!open))}>
-                <motion.div variants={topVariants} animate={open ? "opened" : "closed"} className='w-10 h-1 bg-white rounded origin-left'></motion.div>
-                <motion.div variants={centerVariants} animate={open ? "opened" : "closed"} className='w-10 h-1 bg-white rounded'></motion.div>
-                <motion.div variants={bottomVariants} animate={open ? "opened" : "closed"} className='w-10 h-1 bg-white rounded origin-left'></motion.div>
+            <motion.div
+                    variants={topVariants}
+                    animate={open ? 'opened' : 'closed'}
+                    className={`w-10 h-1 ${open ? 'bg-white' : 'bg-black'} rounded origin-left`}
+                ></motion.div>
+                <motion.div
+                    variants={centerVariants}
+                    animate={open ? 'opened' : 'closed'}
+                    className={`w-10 h-1 ${open ? 'bg-white' : 'bg-black'} rounded`}
+                ></motion.div>
+                <motion.div
+                    variants={bottomVariants}
+                    animate={open ? 'opened' : 'closed'}
+                    className={`w-10 h-1 ${open ? 'bg-white' : 'bg-black'} rounded origin-left`}
+                ></motion.div>
             </button>
             {/* MENU LIST */}
             {open && (
                 <motion.div variants={listVariants} initial="closed" animate="opened" className='absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40'>
                 {links.map(link=>(
                     <motion.div variants={listItemVariants} key={link.title}>
-                        <Link href={link.url}>{link.title}</Link>
+                        <Link href={link.url} onClick={(()=>setOpen(false))}>{link.title}</Link>
                     </motion.div> 
                 ))}
             </motion.div>

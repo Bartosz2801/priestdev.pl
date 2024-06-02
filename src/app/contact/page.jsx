@@ -1,17 +1,22 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
 
 const ContactPage = () => {
 
+    
     const [success,setSuccess] = useState(false);
     const [error,setError] = useState(false);
 
     const text = "Napisz do mnie";
 
     const form = useRef();
+
+    const formView = useRef();
+
+    const formInView = useInView(formView, {once: true, margin:"-100px"})
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -37,10 +42,10 @@ const ContactPage = () => {
       };
 
     return (
-        <motion.div className="h-full" initial={{y:"-200vh"}} animate={{y:"0%"}} transition={{duration: 1}}>
-        <div className='h-full flex flex-col lg:flex-row px-4 pb-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+        <div className="h-screen py-12 md:py-24" ref={formView}>
+        <motion.div id='contact' initial={{opacity:0}} animate={formInView ? {opacity:1} : {}} transition={{delay: 0.5, duration: 1}} className='h-full flex flex-col lg:flex-row px-4 pb-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
            {/* TEXT CONTAINER */}
-           <div className="h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-4xl text-white">
+           <div className="h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-4xl md:text-6xl text-black">
             <div>
             {text.split("").map((letter,index)=>(
                 <motion.span key={index} initial={{opacity:1}} animate={{opacity:0}} transition={{duration:3, repeat:Infinity, delay:index*0.1}}>{letter}</motion.span>
@@ -49,17 +54,17 @@ const ContactPage = () => {
            </div>
 
            {/* FORM CONTAINER */}
-           <form ref={form} onSubmit={sendEmail} className="h-2/3 lg:h-full lg:w-1/2 bg-gray-700/30 rounded-xl text-xl flex flex-col gap-8 justify-center p-12 text-white">
+           <form ref={form} onSubmit={sendEmail} className="h-2/3 lg:h-full lg:w-1/2 bg-gray-100/50 rounded-xl text-xl flex flex-col gap-8 justify-center p-12 text-black">
             <span>Treść wiadomości:</span>
             <textarea name="user_message" rows={6} className="bg-transparent border-b-2 border-b-gray-300 outline-none resize-none"/>
             <span>Adres email:</span>
             <input name="user_email" type="text" className="bg-transparent border-b-2 border-b-gray-300 outline-none"/>
-            <button className="bg-gray-600 p-3 rounded-md font-medium text-white">Wyślij</button>
+            <button className="bg-red-900 p-3 rounded-md font-medium text-white">Wyślij</button>
             {success && <span className="bg-green-900 p-1 text-white text-sm text-center">Wiadomość została wysłana!</span>}
             {error && <span className="bg-red-900 p-1 text-white text-sm text-center">Błąd wysyłania wiadomości</span>}
            </form>
-        </div>
         </motion.div>
+        </div>
     )
 }
 3
