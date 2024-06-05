@@ -12,6 +12,24 @@ const Homepage = () => {
     const techRef = useRef()
     const techInView = useInView(techRef, {once: true, margin:"-100px"})
 
+    const features = [
+      {
+          imageSrc: '/pray_ico.png',
+          title: 'Intencje',
+          description: 'Dodawaj intencje, aby otrzymywać wsparcie modlitewne od użytkowników. Oznaczaj intencje, w których się modlisz, wspierając w ten sposób innych.'
+      },
+      {
+          imageSrc: '/eucharist_ico.png',
+          title: 'Adoracja',
+          description: 'Znajdź miejsca adoracji Najświętszego Sakramentu we Wrocławiu, aby móc oddawać cześć Bogu i modlić się w ciszy i skupieniu.'
+      },
+      {
+          imageSrc: '/confession_ico.png',
+          title: 'Spowiedź',
+          description: 'Zlokalizuj miejsca, gdzie funkcjonuje tzw. stały konfesjonał we Wrocławiu, aby móc skorzystać z sakramentu pokuty poza czasem nabożeństw.'
+      }
+  ];
+
     
 
   return <motion.div className="h-full" initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 0.3, duration: 1}} ref={containerRef}>
@@ -31,47 +49,32 @@ const Homepage = () => {
         </div>
     </div>
   </div>
-  <div className="h-screen bg-black" >
+  <div className="min-h-screen bg-black" >
   <div id="functions" className="min-h-screen py-20 sm:px-8 md:px-12 lg:px-20 xl:px-48" ref={techRef}>
-                    <motion.div initial={{x:'-200vh'}} animate={techInView ? {x:0} : {}} transition={{delay: 0.3, duration: 1}} className="w-full h-full">
-                        <motion.div layout className="flex flex-col md:flex-row gap-12">
-                        <AnimatePresence>   
-                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration:0.5}}
-                        className="bg-white rounded-xl w-1/3 py-8 px-10 flex flex-col items-center justify-center text-start">
-                            
-                            <Image src='/pray_ico.png' alt=''  width={70} height={70} className="object-cover"/>
-                            
-                            <div className="flex flex-col items-center py-2 w-full"><h1 className="text-black text-center text-4xl px-3 py-5 font-medium">Intencje</h1>
-                            <p className="text-black leading-6 text-sm py-3">Dodawaj intencje , aby otrzymywać wsparcie modlitewne od użytkowników.
-                            Oznaczaj intencje, w których chcesz się modlić i wspieraj innych w modlitwie.
-                            </p>
-                            </div>
-    
-                        </motion.div>
-                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration:0.5}}
-                        className="bg-white rounded-xl w-1/3 py-8 px-10 flex flex-col items-center justify-center text-start">
-                            
-                            <Image src='/eucharist_ico.png' alt=''  width={70} height={70} className="object-cover"/>
-                            
-                            <div className="flex flex-col items-center py-2 w-full"><h1 className="text-black text-4xl px-3 py-5 text-center font-medium">Adoracja</h1>
-                            <p className="text-black leading-6 text-sm py-3">Znajdź miejsca adoracji Najświętszego Sakramentu we Wrocławiu, aby móc oddawać cześć Bogu i modlić się w ciszy i skupieniu.
-                            </p>
-                            </div>
-    
-                        </motion.div>
-                        <motion.div layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration:0.5}}
-                        className="bg-white rounded-xl w-1/3 py-8 px-10 flex flex-col items-center justify-center text-start">
-                            
-                            <Image src='/confession_ico.png' alt=''  width={70} height={70} className="object-cover"/>
-                            
-                            <div className="flex flex-col items-center py-2 w-full"><h1 className="text-black text-4xl px-3 py-5 text-center font-medium">Spowiedź</h1>
-                            <p className="text-black leading-6 text-sm py-3">Zlokalizuj miejsca, gdzie funkcjonuje tzw. stały konfesjonał we Wrocławiu, aby móc skorzystać z sakramentu pokuty i pojedniania poza czasem nabożeństw
-                            </p>
-                            </div>
-    
-                        </motion.div>
-                        </AnimatePresence> 
-                    </motion.div>
+    <motion.div initial={{x:'-200vh'}} animate={techInView ? {x:0} : {}} transition={{delay: 0.3, duration: 1}} className="w-full h-full px-4">
+    <div className="text-white py-10 w-full"><h1 className="text-4xl md:text-6xl font-semibold">O aplikacji</h1>
+    <p className="text-white leading-9 text-xl py-12">"OREMUS Módlmy się wspólnie" to aplikacja, która ułatwia doświadczenie wartości modlitwy wspólnotowej. 
+    W&nbsp;świecie pełnym wyzwań i&nbsp;trosk, codzienna modlitwa staje się nie tylko źródłem siły, ale również okazją do&nbsp;budowania wspólnoty. 
+    Dzięki aplikacji możesz dzielić się swoimi intencjami modlitewnymi, wspierać innych w&nbsp;ich potrzebach modlitewnych i&nbsp;odkrywać spokój na&nbsp;modlitwie. 
+    Dołącz do sieci modlitewnej i&nbsp;poczuj, jak modlitwa może przynieść pocieszenie, nadzieję i&nbsp;jedność w&nbsp;naszym codziennym życiu.
+            </p>
+    </div>
+    <div className="flex flex-col md:flex-row gap-12">
+    {features.map((feature, index) => (
+            <div key={index} className="bg-white rounded-xl py-8 px-8 min-h-1/3 w-full md:w-1/3 flex flex-col items-center justify-center text-start">
+                <div className="w-full h-1/4 flex justify-center">
+                    <Image src={feature.imageSrc} alt=''  width={70} height={70} className="object-contain"/>
+                </div>
+                <div className="flex flex-col items-center py-2 h-1/4 w-full">
+                    <h1 className="text-black text-4xl px-3 py-5 text-center font-medium">{feature.title}</h1>
+                </div>
+                <div className="w-full h-1/2">
+                    <p className="text-black leading-6 text-sm py-3">{feature.description}</p>
+                </div>
+            </div>
+        ))}
+</div>
+
                       </motion.div>      
             </div>
   </div>
