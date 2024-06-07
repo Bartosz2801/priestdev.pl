@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 import ContactPage from "./contact/page";
+import Link from "next/link";
 
 const Homepage = () => {
 
@@ -44,8 +45,8 @@ const Homepage = () => {
       <h1 className='text-4xl md:text-6xl font-semibold text-center md:text-left text-black'>Wsparcie modlitewne<br/>w zasięgu ręki</h1>
         {/* BUTTONS */}
         <div className='w-full flex flex-col md:flex-row gap-8 items-center'>
-          <Image src='/appstore.svg' alt='' width={200} height={90} className='object-contain' />
-          <Image src='/googleplay.svg' alt='' width={200} height={90} className='object-contain' />
+        <Link href='https://apps.apple.com/pl/app/oremus-m%C3%B3dlmy-si%C4%99-wsp%C3%B3lnie/id6504049418?l=pl' target="new"><Image src='/appstore.svg' alt='' width={200} height={90} className='object-contain' /></Link>
+        <Link href='https://play.google.com/store/apps/details?id=com.bartoszduleba.oremus&pcampaignid=web_share' target="new"><Image src='/googleplay.svg' alt='' width={200} height={90} className='object-contain' /></Link>
         </div>
     </div>
   </div>

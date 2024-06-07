@@ -63,7 +63,7 @@ const ContactPage = () => {
             <button className="bg-black p-3 rounded-md font-medium text-white">Wyślij</button>
             {success && <span className="bg-green-900 p-1 text-white text-sm text-center">Wiadomość została wysłana!</span>}
             {error && <span className="bg-red-900 p-1 text-white text-sm text-center">Błąd wysyłania wiadomości</span>}
-            <Link href='/privacy' className="text-sm text-center text-red-900">Polityka prywatności aplikacji</Link>
+            <Link href='/privacy.html' className="text-sm text-center text-red-900">Polityka prywatności aplikacji</Link>
            </form>
            
            
