@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar";
 import BackToTopButton from '@/components/backToTop';
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

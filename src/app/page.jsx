@@ -48,6 +48,9 @@ const Homepage = () => {
         <Link href='https://apps.apple.com/pl/app/oremus-m%C3%B3dlmy-si%C4%99-wsp%C3%B3lnie/id6504049418?l=pl' target="new"><Image src='/appstore.svg' alt='' width={200} height={90} className='object-contain' /></Link>
         <Link href='https://play.google.com/store/apps/details?id=com.bartoszduleba.oremus&pcampaignid=web_share' target="new"><Image src='/googleplay.svg' alt='' width={200} height={90} className='object-contain' /></Link>
         </div>
+        <div className='w-full hidden md:flex md:flex-row gap-8 items-center'>
+        <Image src='/apple.svg' alt='' width={200} height={200} className='object-contain' />
+        <Image src='/android.svg' alt='' width={200} height={200} className='object-contain' /></div>
     </div>
   </div>
   <div className="min-h-screen bg-black" >
